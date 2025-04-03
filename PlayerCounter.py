@@ -11,3 +11,7 @@ def PlayerLogin():
 def PlayerLogout():
     logouts = pd.read_csv("C:\\Users\\gameuser\\Desktop\\GA_25_P1_Part3_Darragh_McKernan\\data\\exited_game.csv", parse_dates=["Time"])
     return logouts[['pid', 'Time']].rename(columns={"Time": "LogoutTime"})
+
+def GetLevelProgression():
+    logouts = pd.read_csv("C:\\Users\\gameuser\\Desktop\\GA_25_P1_Part3_Darragh_McKernan\\data\\exited_game.csv", parse_dates=["Time"])
+    return logouts[['pid', 'Time', 'LevelProgressionAmount']].rename(columns={"Time": "LogoutTime"})
