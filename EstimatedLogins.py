@@ -1,4 +1,7 @@
 import pandas as pd
+import os
+currentDirectory = os.path.dirname(os.path.abspath(__file__))
 def GetEstimatedSessions():
-    dailyLogins = pd.read_csv("C:\\Users\\gameuser\\Desktop\\GA_25_P1_Part3_Darragh_McKernan\\data\\player_logged_in.csv")
+    path = os.path.join(currentDirectory, "data", "player_logged_in.csv")
+    dailyLogins = pd.read_csv(path)
     return dailyLogins["EventName"].count()
